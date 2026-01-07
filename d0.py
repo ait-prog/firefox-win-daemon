@@ -8,34 +8,32 @@ from pathlib import Path
 try:
     import keyboard
 except ImportError:
-    print("✗ Ошибка: библиотека 'keyboard' не установлена")
-    print("  Установите её командой: pip install keyboard")
+    print("'keyboard' нема")
+    print("!pip install keyboard")
     sys.exit(1)
 
 from s import open_firefox_with_urls, URLS
 
 def on_hotkey_pressed():
-    """Обработчик нажатия горячей клавиши Win+O"""
-    print(f"[{time.strftime('%H:%M:%S')}] Горячая клавиша Win+O нажата - запуск Firefox...")
+    """Win+O"""
+    print(f"[{time.strftime('%H:%M:%S')}]")
     open_firefox_with_urls(URLS)
 
 def main():
-
     print("zero condition Daemon")
-
     print("start: Win + O")
     print("exit: Ctrl+C")
 
     
-    # Регистрируем горячую клавишу Win+O
-    # На Windows Win клавиша = 'windows' или 'win'
+    # Регистрируем горячую клавишу Super+O
+    # На Windows Win клавиша = 'win'
     try:
         keyboard.add_hotkey('win+o', on_hotkey_pressed)
-        print("✓ Горячая клавиша зарегистрирована")
-        print("  Нажмите Win+O для запуска Firefox\n")
+        print("Super button")
+        print(" Нажмите Win+O для запуска Firefox\n")
     except Exception as e:
-        print(f"✗ Ошибка при регистрации горячей клавиши: {e}")
-        print("  Возможно, нужны права администратора")
+        print(f"✗: {e}")
+        print("нужна админка")
         sys.exit(1)
     
     # Держим скрипт запущенным
@@ -57,6 +55,6 @@ if __name__ == "__main__":
                 print("(правый клик -> Запуск от имени администратора)\n")
         except:
             pass
-    
-    main()
 
+    #TODO:докастомить переносом функционала из Linux
+    main()

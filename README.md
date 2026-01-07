@@ -1,1 +1,1 @@
-launch ur browser with custom urls
+Firefox daemon

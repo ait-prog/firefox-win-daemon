@@ -1,6 +1,7 @@
 @echo off
-echo Запуск Browser Launcher Daemon...
-echo Горячая клавиша: Win + O
+echo Browser Launcher Daemon...
+echo Ket: Super + O
 echo.
 python daemon.py
+
 pause
